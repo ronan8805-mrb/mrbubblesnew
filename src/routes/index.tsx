@@ -30,7 +30,7 @@ function HomePage() {
 
   return (
     <>
-      <section className="hero-frame relative flex items-center overflow-hidden">
+      <section className="hero-frame relative flex items-center overflow-hidden text-paper">
         <div className="relative mx-auto grid w-full max-w-6xl items-center gap-8 px-4 py-12 md:grid-cols-[1.05fr_0.95fr] md:py-16">
           <div>
             <p className="text-sm font-bold tracking-wide">Mr Bubbles · Drogheda</p>
@@ -41,7 +41,7 @@ function HomePage() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <ButtonLink to="/quote">Get a collection quote</ButtonLink>
-              <ButtonAnchor href={`tel:${PHONE_TEL}`} tone="clear">
+              <ButtonAnchor href={`tel:${PHONE_TEL}`} tone="ghost">
                 {PHONE_DISPLAY}
               </ButtonAnchor>
             </div>

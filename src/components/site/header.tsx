@@ -28,7 +28,7 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-navy/10 bg-sky text-navy">
+    <header className="sticky top-0 z-40 border-b border-white/25 bg-sky text-paper">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2">
         <Logo />
         <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
