@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ChevronDown } from "lucide-react";
 import { RouteSketch } from "@/components/home/route-sketch";
+import { Certifications } from "@/components/site/certifications";
 import { Photo } from "@/components/site/photo";
 import { Seal } from "@/components/site/seal";
 import { SectorSwitcher } from "@/components/sector/switcher";
@@ -122,6 +123,10 @@ function HomePage() {
             ))}
           </ul>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-14">
+        <Certifications />
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-14" aria-labelledby="flow-heading">

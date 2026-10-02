@@ -56,7 +56,7 @@ export type SectorId = (typeof sectors)[number]["id"];
 export const proofs = [
   {
     title: "ISO 9001 and ISO 45001",
-    body: "Quality management, and health and safety, both certified.",
+    body: "NSAI certificates 19.7625 and 45.1101, valid to 17 December 2028.",
   },
   {
     title: "Fully insured. Irish owned.",

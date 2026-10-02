@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageIntro } from "@/components/site/page-intro";
+import { Certifications } from "@/components/site/certifications";
 import { Seal } from "@/components/site/seal";
 
 export const Route = createFileRoute("/compliance")({
@@ -44,7 +45,8 @@ function CompliancePage() {
         lede="ISO 9001 for quality. ISO 45001 for health and safety. Insured. Irish owned. A scan on every bag."
       />
       <div className="mx-auto max-w-6xl px-4 py-14">
-        <ul className="grid gap-4 md:grid-cols-2">
+        <Certifications />
+        <ul className="mt-8 grid gap-4 md:grid-cols-2">
           {standards.map((item) => (
             <li key={item.title} className="bg-paper p-5 ring-1 ring-line">
               <Seal className="text-brand" />
