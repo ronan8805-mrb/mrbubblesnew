@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import type { ReactNode } from "react";
+import { BubbleField } from "@/components/site/bubbles";
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
 import { MobileBar } from "@/components/site/mobile-bar";
@@ -28,15 +29,18 @@ export function SiteShell({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <div className="flex min-h-screen flex-col bg-mist text-ink">
+    <div className="skin relative flex min-h-screen flex-col text-ink">
+      <BubbleField />
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <Header />
-      <main id="main" className="flex-1 pb-24 md:pb-0">
-        {children}
-      </main>
-      <Footer />
+      <div className="relative z-10 flex min-h-screen flex-col">
+        <Header />
+        <main id="main" className="flex-1 pb-24 md:pb-0">
+          {children}
+        </main>
+        <Footer />
+      </div>
       <MobileBar />
     </div>
   );

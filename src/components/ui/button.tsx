@@ -6,6 +6,7 @@ const tones = {
   navy: "bg-navy text-paper hover:bg-brand-deep",
   paper: "bg-paper text-navy hover:bg-foam",
   line: "border border-line bg-paper text-ink hover:bg-foam",
+  clear: "border border-navy/30 bg-white/35 text-navy hover:bg-white/70",
   ghost: "border border-paper text-paper hover:bg-paper/15",
 } as const;
 

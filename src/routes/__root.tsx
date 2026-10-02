@@ -16,10 +16,10 @@ export const Route = createRootRoute({
         content:
           "Mr Bubbles Express Laundry & Linen Specialists. Commercial laundry, linen rental, and workwear from Drogheda, delivered across Ireland.",
       },
-      { name: "theme-color", content: "#0678A0" },
+      { name: "theme-color", content: "#1CB9E6" },
     ],
     links: [
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "icon", type: "image/png", href: "/logo.png" },
       { rel: "stylesheet", href: appCss },
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },
       { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },

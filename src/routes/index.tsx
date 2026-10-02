@@ -30,28 +30,26 @@ function HomePage() {
 
   return (
     <>
-      <section className="hero-frame on-brand relative flex items-center overflow-hidden bg-brand text-paper">
-        <div className="hairline pointer-events-none absolute inset-0" aria-hidden="true" />
-        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-8 px-4 py-12 md:grid-cols-2 md:py-16">
+      <section className="hero-frame relative flex items-center overflow-hidden">
+        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-8 px-4 py-12 md:grid-cols-[1.05fr_0.95fr] md:py-16">
           <div>
-            <p className="text-sm font-semibold">Mr Bubbles · Drogheda</p>
+            <p className="text-sm font-bold tracking-wide">Mr Bubbles · Drogheda</p>
             <h1 className="mt-3 text-4xl font-bold md:text-6xl">Fresh linen. On the van. Back before service.</h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed">
               Commercial laundry, linen rental, and workwear for hotels, healthcare, salons, and restaurants. Collected
               in Drogheda, delivered across Ireland.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <ButtonLink to="/quote" tone="paper">
-                Get a collection quote
-              </ButtonLink>
-              <ButtonAnchor href={`tel:${PHONE_TEL}`} tone="ghost">
+              <ButtonLink to="/quote">Get a collection quote</ButtonLink>
+              <ButtonAnchor href={`tel:${PHONE_TEL}`} tone="clear">
                 {PHONE_DISPLAY}
               </ButtonAnchor>
             </div>
           </div>
-          <div className="aspect-linen overflow-hidden bg-brand-deep">
-            <Photo photo={photos.towels} priority className="h-full w-full object-cover" />
-          </div>
+          <figure className="overflow-hidden bg-navy shadow-lg ring-4 ring-white/80">
+            <Photo photo={photos.fleet} priority className="aspect-photo h-full w-full object-cover" />
+            <figcaption className="sr-only">The Mr Bubbles fleet at the depot.</figcaption>
+          </figure>
         </div>
       </section>
 
@@ -178,7 +176,7 @@ function HomePage() {
             </ButtonLink>
           </div>
           <div className="aspect-video overflow-hidden bg-foam">
-            <Photo photo={photos.fleet} />
+            <Photo photo={photos.towels} />
           </div>
         </div>
       </section>
