@@ -1,0 +1,135 @@
+@import "tailwindcss";
+@import "@fontsource/montserrat/latin-600.css";
+@import "@fontsource/montserrat/latin-700.css";
+@import "@fontsource/source-sans-3/latin-400.css";
+@import "@fontsource/source-sans-3/latin-600.css";
+
+@theme {
+  --color-brand: #0678a0;
+  --color-brand-deep: #04516e;
+  --color-navy: #072033;
+  --color-ink: #072033;
+  --color-muted: #3a5566;
+  --color-foam: #e5f4fa;
+  --color-mist: #f4fafc;
+  --color-paper: #ffffff;
+  --color-line: #c5dde8;
+  --color-focus: #072033;
+  --font-sans: "Source Sans 3", "Segoe UI", sans-serif;
+  --font-display: "Montserrat", "Avenir Next", "Segoe UI", sans-serif;
+  --aspect-linen: 4 / 3;
+  --aspect-photo: 3 / 2;
+  --radius-md: 0.5rem;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background: var(--color-mist);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    line-height: 1.15;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled),
+  summary {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--color-line);
+    color: var(--color-ink);
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary {
+    list-style: none;
+  }
+}
+
+@layer components {
+  .on-brand,
+  .on-navy {
+    --color-focus: #ffffff;
+  }
+
+  .hairline {
+    background-image: repeating-linear-gradient(
+      -32deg,
+      transparent,
+      transparent 14px,
+      rgb(255 255 255 / 16%) 14px,
+      rgb(255 255 255 / 16%) 15px
+    );
+  }
+
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    z-index: 80;
+    transform: translateY(-200%);
+    background: var(--color-paper);
+    color: var(--color-navy);
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+  }
+
+  .skip-link:focus {
+    transform: none;
+  }
+
+  .hero-frame {
+    min-height: 85vh;
+  }
+
+  .menu-panel {
+    max-height: calc(100dvh - 9rem);
+    overflow: auto;
+  }
+
+  .mobile-bar {
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+  }
+}
+
+@media (min-width: 48rem) {
+  .hero-frame {
+    min-height: 100vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
