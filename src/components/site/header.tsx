@@ -10,9 +10,17 @@ const links = [...primaryNav, ...moreNav];
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const panelId = useId();
   const buttonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -28,9 +36,14 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/25 bg-sky text-paper">
+    <header
+      className={cn(
+        "sticky top-0 z-40 border-0 text-paper",
+        scrolled || open ? "bg-sky/95 backdrop-blur-sm" : "bg-transparent",
+      )}
+    >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2">
-        <Logo />
+        <Logo className="logo-float" />
         <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
           {primaryNav.map((item) =>
             item.to === "/quote" ? (

@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ChevronDown } from "lucide-react";
 import { RouteSketch } from "@/components/home/route-sketch";
 import { Certifications } from "@/components/site/certifications";
+import { Ticker } from "@/components/site/ticker";
 import { Photo } from "@/components/site/photo";
 import { Seal } from "@/components/site/seal";
 import { SectorSwitcher } from "@/components/sector/switcher";
@@ -53,6 +54,8 @@ function HomePage() {
           </figure>
         </div>
       </section>
+
+      <Ticker />
 
       <RouteSketch />
 

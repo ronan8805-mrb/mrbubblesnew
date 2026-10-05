@@ -122,6 +122,31 @@
   .mobile-bar {
     padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
   }
+
+  .logo-float {
+    animation: logo-float 3.6s ease-in-out infinite;
+  }
+
+  .ticker {
+    overflow: hidden;
+  }
+
+  .ticker-track,
+  .ticker-copy {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .ticker-track {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-inline: 1rem;
+  }
+
+  .ticker-copy + .ticker-copy {
+    display: none;
+  }
 }
 
 @keyframes bubble-rise {
@@ -135,6 +160,39 @@
   100% {
     transform: translate3d(12px, -115vh, 0) scale(1.08);
     opacity: 0;
+  }
+}
+
+@keyframes logo-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes ticker-move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ticker-track {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: max-content;
+    padding-inline: 0;
+    animation: ticker-move 36s linear infinite;
+  }
+
+  .ticker-copy + .ticker-copy {
+    display: flex;
   }
 }
 
