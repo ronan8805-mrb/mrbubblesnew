@@ -1,4 +1,5 @@
 const items = [
+  "Hilton",
   "HSE & Tusla approved centres",
   "Hotels & guesthouses",
   "Hair salons & beauty studios",

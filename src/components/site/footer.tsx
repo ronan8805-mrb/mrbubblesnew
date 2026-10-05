@@ -1,63 +1,33 @@
 import { Link } from "@tanstack/react-router";
-import { Logo } from "@/components/site/logo";
-import { ADDRESSES, EMAIL, pages, PHONE_DISPLAY, PHONE_TEL } from "@/lib/content";
+import { ADDRESSES, CONTACT_EMAIL, pages, PHONE_DISPLAY, PHONE_TEL } from "@/lib/content";
 
 export function Footer() {
   return (
     <footer className="on-navy bg-navy text-paper">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-4">
-        <div>
-          <Logo />
-          <p className="mt-4 text-sm leading-relaxed">
-            Ireland’s laundry and linen specialists. Fresh, hygienic, on time.
-          </p>
-          <p className="mt-3 text-sm leading-relaxed">
-            Certified to ISO 9001 and ISO 45001. Fully insured. Irish owned.
-          </p>
+      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 text-sm">
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
+          <p className="font-bold">Mr Bubbles</p>
+          <a className="font-semibold underline-offset-2 hover:underline" href={`tel:${PHONE_TEL}`}>
+            {PHONE_DISPLAY}
+          </a>
+          <a className="font-semibold underline-offset-2 hover:underline" href={`mailto:${CONTACT_EMAIL}`}>
+            {CONTACT_EMAIL}
+          </a>
+          <p className="text-white/80">{ADDRESSES.map((address) => address.lines).join(" · ")}</p>
         </div>
-        <div>
-          <h2 className="text-sm font-bold">Depots</h2>
-          <ul className="mt-3 grid gap-3 text-sm leading-relaxed">
-            {ADDRESSES.map((address) => (
-              <li key={address.title}>{address.lines}</li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h2 className="text-sm font-bold">Talk to the depot</h2>
-          <ul className="mt-3 grid gap-2 text-sm">
-            <li>
-              <a className="inline-flex min-h-11 items-center font-semibold underline-offset-2 hover:underline" href={`tel:${PHONE_TEL}`}>
-                {PHONE_DISPLAY}
-              </a>
-            </li>
-            <li>
-              <a
-                className="inline-flex min-h-11 items-center break-all font-semibold underline-offset-2 hover:underline"
-                href={`mailto:${EMAIL}`}
-              >
-                {EMAIL}
-              </a>
-            </li>
-            <li className="text-sm">mrbubbles.ie</li>
-          </ul>
-        </div>
-        <div>
-          <h2 className="text-sm font-bold">Sitemap</h2>
-          <ul className="mt-3 grid gap-1 text-sm">
-            {pages.map((page) => (
-              <li key={page.to}>
-                <Link
-                  to={page.to}
-                  className="inline-flex min-h-11 items-center font-semibold underline-offset-2 hover:underline"
-                  activeOptions={{ exact: page.to === "/" }}
-                >
-                  {page.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <nav aria-label="Footer" className="flex flex-wrap gap-x-4 gap-y-1">
+          {pages.map((page) => (
+            <Link
+              key={page.to}
+              to={page.to}
+              className="underline-offset-2 hover:underline"
+              activeOptions={{ exact: page.to === "/" }}
+            >
+              {page.label}
+            </Link>
+          ))}
+        </nav>
+        <p className="text-xs text-white/75">ISO 9001 · ISO 45001 · Fully insured · Irish owned</p>
       </div>
     </footer>
   );
