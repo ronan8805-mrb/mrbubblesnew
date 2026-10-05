@@ -23,9 +23,9 @@ export const photos = {
   },
   fleet: {
     src: fleet,
-    width: 1600,
-    height: 900,
-    alt: "Three Mr Bubbles vans and a truck parked in a line.",
+    width: 820,
+    height: 669,
+    alt: "Five Mr Bubbles vans and trucks lined up on the depot yard.",
   },
   hotel: {
     src: hotel,

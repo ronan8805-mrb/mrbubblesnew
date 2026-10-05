@@ -49,7 +49,7 @@ function HomePage() {
             </div>
           </div>
           <figure className="overflow-hidden bg-navy shadow-lg ring-4 ring-white/80">
-            <Photo photo={photos.fleet} priority className="aspect-video h-full w-full object-cover" />
+            <Photo photo={photos.fleet} priority className="aspect-[820/669] h-full w-full object-cover" />
             <figcaption className="sr-only">The Mr Bubbles fleet at the depot.</figcaption>
           </figure>
         </div>
