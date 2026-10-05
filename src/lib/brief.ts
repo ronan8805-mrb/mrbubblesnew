@@ -1,4 +1,4 @@
-import { COUNTIES, sectorById, type SectorId } from "@/lib/content";
+import { CONTACT_EMAIL, COUNTIES, sectorById, type SectorId } from "@/lib/content";
 
 export type LinenMode = "own" | "rental";
 export type VolumeUnit = "kg" | "items";
@@ -112,7 +112,7 @@ export function briefText(fields: BriefFields): string {
 export function mailtoHref(fields: BriefFields): string {
   const sector = sectorById(fields.sector).label;
   const subject = `Collection quote — ${sector} — ${fields.county || "county not set"}`;
-  return `mailto:mrbubblesexpress@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(briefText(fields))}`;
+  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(briefText(fields))}`;
 }
 
 export function stepProblem(step: number, fields: BriefFields): string | null {

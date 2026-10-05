@@ -15,7 +15,7 @@ import {
   type LinenMode,
   type VolumeBand,
 } from "@/lib/brief";
-import { COUNTIES, EMAIL, PHONE_DISPLAY, PHONE_TEL, sectorById, sectors, type SectorId } from "@/lib/content";
+import { CONTACT_EMAIL, COUNTIES, PHONE_DISPLAY, PHONE_TEL, sectorById, sectors, type SectorId } from "@/lib/content";
 import { useQuoteStore } from "@/lib/quote-store";
 import { cn } from "@/lib/utils";
 
@@ -390,7 +390,7 @@ export function QuoteForm({ layout }: { layout: "steps" | "stack" }) {
           <fieldset className="grid gap-4">
             <legend className="text-2xl font-bold">Who should we call?</legend>
             <p className="text-sm text-muted">
-              The brief is emailed to {EMAIL}. It also stays on this device if you refresh the page.
+              The brief is emailed to {CONTACT_EMAIL}. It also stays on this device if you refresh the page.
             </p>
             <label className="grid gap-2 text-sm font-semibold" htmlFor="brief-name">
               Name

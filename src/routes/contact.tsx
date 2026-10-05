@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { QuoteForm } from "@/components/quote/configurator";
 import { PageIntro } from "@/components/site/page-intro";
-import { ADDRESSES, EMAIL, PHONE_DISPLAY, PHONE_TEL } from "@/lib/content";
+import { ADDRESSES, CONTACT_EMAIL, PHONE_DISPLAY, PHONE_TEL } from "@/lib/content";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -9,7 +9,7 @@ export const Route = createFileRoute("/contact")({
       { title: "Contact · Mr Bubbles" },
       {
         name: "description",
-        content: "Call 086 270 9299, email mrbubblesexpress@gmail.com, or send the same collection brief from this page.",
+        content: "Call 086 270 9299, email ronan@mrbubblesexpress.com, or send the same collection brief from this page.",
       },
     ],
   }),
@@ -30,9 +30,9 @@ function ContactPage() {
             <span className="text-xs font-semibold tracking-wide uppercase">Phone</span>
             <span className="mt-1 text-xl font-bold">{PHONE_DISPLAY}</span>
           </a>
-          <a className="flex min-h-11 flex-col justify-center bg-paper p-5 ring-1 ring-line" href={`mailto:${EMAIL}`}>
+          <a className="flex min-h-11 flex-col justify-center bg-paper p-5 ring-1 ring-line" href={`mailto:${CONTACT_EMAIL}`}>
             <span className="text-xs font-semibold tracking-wide uppercase text-muted">Email</span>
-            <span className="mt-1 font-bold break-all">{EMAIL}</span>
+            <span className="mt-1 font-bold break-all">{CONTACT_EMAIL}</span>
           </a>
           <div className="bg-paper p-5 ring-1 ring-line">
             <p className="text-xs font-semibold tracking-wide uppercase text-muted">Depots</p>

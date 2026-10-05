@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageIntro } from "@/components/site/page-intro";
-import { ADDRESSES, EMAIL, PHONE_DISPLAY, PHONE_TEL, provinces } from "@/lib/content";
+import { ADDRESSES, CONTACT_EMAIL, PHONE_DISPLAY, PHONE_TEL, provinces } from "@/lib/content";
 
 export const Route = createFileRoute("/coverage")({
   head: () => ({
@@ -51,8 +51,8 @@ function CoveragePage() {
           <a className="inline-flex min-h-11 items-center font-semibold text-brand" href={`tel:${PHONE_TEL}`}>
             Call {PHONE_DISPLAY}
           </a>
-          <a className="inline-flex min-h-11 items-center font-semibold text-brand" href={`mailto:${EMAIL}`}>
-            {EMAIL}
+          <a className="inline-flex min-h-11 items-center font-semibold text-brand" href={`mailto:${CONTACT_EMAIL}`}>
+            {CONTACT_EMAIL}
           </a>
         </div>
         <h2 className="mt-12 text-3xl font-bold">Counties</h2>

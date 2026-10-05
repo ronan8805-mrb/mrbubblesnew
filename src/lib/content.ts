@@ -1,6 +1,5 @@
 export const PHONE_DISPLAY = "086 270 9299";
 export const PHONE_TEL = "+353862709299";
-export const EMAIL = "mrbubblesexpress@gmail.com";
 export const CONTACT_EMAIL = "ronan@mrbubblesexpress.com";
 
 export const ADDRESSES = [
